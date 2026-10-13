@@ -22,7 +22,7 @@
 
 ## 📑 Table of Contents
 
-1. [The Problem (in plain English)](#-the-problem-in-plain-english)
+1. [The Problem](#-the-problem-in-plain-english)
 2. [The Solution](#-the-solution)
 3. [Architecture](#-architecture)
 4. [Tools Used and Why](#-tools-used-and-why)
