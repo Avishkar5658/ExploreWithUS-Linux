@@ -192,34 +192,35 @@ Here is the script, with a plain-English note above every step:
 
 ```bash
 #!/bin/bash
-# deploy.sh : host a static website on Apache2
 
-set -e   # stop immediately if any command fails
+#Update te apt and install the apache2 server.
 
-REPO_URL="https://github.com/Avishkar5658/ExploreWithUS-Linux.git"
-WEB_DIR="/var/www/html"
-TMP_DIR="/tmp/exploreus-site"
+sudo apt update
+sudo apt install apache2 -y
 
-echo "Step 1: Updating the software list..."
-sudo apt update -y
 
-echo "Step 2: Installing Apache2 and Git..."
-sudo apt install -y apache2 git
+#To remove the default apache server File.
 
-echo "Step 3: Downloading the website from GitHub..."
-rm -rf "$TMP_DIR"
-git clone "$REPO_URL" "$TMP_DIR"
+sudo rm -r /var/www/html/*
 
-echo "Step 4: Publishing the website..."
-sudo rm -rf "$WEB_DIR"/*
-sudo cp -r "$TMP_DIR"/website/* "$WEB_DIR"/
 
-echo "Step 5: Starting Apache2..."
-sudo systemctl enable --now apache2
+#To create the index.html file.
+
+git clone https://github.com/Avishkar5658/ExploreWithUS-Linux.git
+
+cd ExploreWithUS-Linux
+
+#Copy the website to the apache2 default folder.
+
+sudo cp -r ./* /var/www/html
+
+
+#Restart the apache2 server.
+
 sudo systemctl restart apache2
 
-echo "✅ Done! Open this address in your browser:"
-echo "http://$(hostname -I | awk '{print $1}')"
+
+echo "Websites hosted successfully..."
 ```
 
 > ✏️ *If your own `deploy.sh` differs (for example it unzips a template), keep your version in the repo and update this block to match it.*
