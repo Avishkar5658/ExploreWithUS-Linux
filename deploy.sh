@@ -13,16 +13,9 @@ sudo rm -r /var/www/html/*
 
 #To create the index.html file.
 
-git clone 
+git clone https://github.com/Avishkar5658/ExploreWithUS-Linux.git
 
-cd Linux_Project_ApacheServer 
-
-sudo apt install unzip
-
-unzip templatemo_596_electric_xtra.zip
-
-cd templatemo_596_electric_xtra 
-
+cd ExploreWithUS-Linux
 
 #Copy the website to the apache2 default folder.
 
