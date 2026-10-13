@@ -37,7 +37,7 @@
 
 ---
 
-## 🤔 The Problem (in plain English)
+## 🤔 The Problem 
 
 Imagine you built a website about your favourite forts and treks. It works perfectly **on your own laptop**, but nobody else can see it.
 
